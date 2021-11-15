@@ -1,6 +1,6 @@
 
 ------------------------------------------------------------------------
-# Creature War
+#Creature War
 
 ## The purpose of this project is to make creatures go to war, and show you a description of the hitpoint, health remaining and attacks,in this project there are two different armies that are confronting each other.
 
