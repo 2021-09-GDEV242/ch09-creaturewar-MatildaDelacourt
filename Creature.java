@@ -7,8 +7,8 @@
  * the creature is alive or knocked out. The creature is also responsible for calculating
  * damage delivered based on the creature's strength (1 to str) 
  * 
- * @author Crosbie
- * @version 2020-10 v1.0
+ * @author  Matilda Delacourt
+ * @version 11.15.2021
  */
 // we will learn what the abstract keyword does in a later chapter
 public abstract class Creature
@@ -38,6 +38,9 @@ public abstract class Creature
      */
     public Creature (int str, int hp) {
        //implement this
+       this.str = str;
+       this.hp = hp;
+       this.max_hp = hp;
     }
     
     
@@ -46,18 +49,25 @@ public abstract class Creature
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int attack(){
-        // TODO: implement a damage method
-        return 0;
+        return damage();
     }
     
-    
+    /**
+     * Damage a random number between 1 and str
+     * @return a value between 1 and str to be used to cause damage to another creature
+     */ 
+    public int damage(){
+        return Randomizer.nextInt(this.str);
+    }
     /**
      * Is this creature still capable of fighting?
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+        if(this.hp > 0){
+            return true;
+        }
+        return false; 
     }
     
     /**
@@ -65,7 +75,10 @@ public abstract class Creature
      * @return true when current hit point level is less than or equal to zero
      */
     public boolean isKnockedOut() {
-        //TODO: implement a method to report if the creature has been killed
+        //knocked out if HP is 0 or less
+        if(this.hp <= 0){
+            return true;
+        }
         return false; //change this
     }
     
@@ -76,7 +89,15 @@ public abstract class Creature
      * @param damage value to remove from hit point count
      */
     public void takeDamage(int damage) {
-        // TODO: implement this
+ 
+        this.hp = this.hp - damage;
     }
     
+    /**
+     * Return number of hit points
+     * @return the hit points
+     */
+    public int getHealth(){
+        return this.hp;
+    }
 }

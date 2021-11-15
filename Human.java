@@ -5,8 +5,8 @@
  * Implements a maximum/minimum strength for the creature type [20/5]
  * Implements a maximum/minimum hitpoint total for the creature type [25/5]
  * 
- * @author Bill Crosbie
- * @version 2020-10 v1.0
+ * @author Matilda Delacourt
+ * @version 11.15.2021
  */
 public class Human extends Creature
 {
@@ -36,6 +36,7 @@ public class Human extends Creature
             Randomizer.nextInt(MAX_HUMAN_HP-MIN_HUMAN_HP)+MIN_HUMAN_HP,    
             Randomizer.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR
         );
+        
           
     }
     
